@@ -72,7 +72,7 @@ typing.innerHTML = '<span class="dot"></span><span class="dot"></span><span clas
 chatWindow.appendChild(typing);
 chatWindow.scrollTop = chatWindow.scrollHeight;
 
-fetch('http://127.0.0.1:5000/chatbot', {
+fetch('https://curabot-z3qx.onrender.com', {
 method: 'POST',
 headers: { 'Content-Type': 'application/json' },
 body: JSON.stringify({ user_input: text })
