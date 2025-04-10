@@ -52,13 +52,13 @@ def predict_disease(symptoms):
 
 def ask_deepseek_v3(messages):
     headers = {
-        "Authorization": "Bearer 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",  # 🔐 Replace this with your OpenRouter key
+        "Authorization": "Bearer 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",  # 🔐 Replace this with your OpenRouter key
         "HTTP-Referer": "https://curabot-z3qx.onrender.com",  # or your website domain
         "Content-Type": "application/json"
     }
 
     data = {
-        "model": "deepseek/deepseek-chat-v3-0324",
+        "model": "deepseek/deepseek-chat-v3-0324:free",
         "messages": message_history,
         "temperature": 0.5,
         "max_tokens": 100
