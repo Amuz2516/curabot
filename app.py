@@ -3,7 +3,8 @@ from flask_cors import CORS
 import joblib
 import requests
 import re
-import pandas as pd  # ✅ Add this!
+import pandas as pd
+from flask import Flask, render_template, request, jsonify # ✅ Add this!
 
 app = Flask(__name__)
 CORS(app)  # Allow frontend to call this backend
@@ -71,7 +72,23 @@ def ask_deepseek_v3(messages):
         print("Error from OpenRouter:", response.json())
         return "⚠️ Sorry, I couldn't generate a response right now."
 # Flask route
+
+# ✅ 1. Landing Page route
+@app.route('/')
+def landing():
+    return render_template('landing.html')
+
+# ✅ 2. Chat page route
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+# ✅ 3. Privacy Policy route
+@app.route('/privacy')
+def privacy():
+    return render_template('privacy.html')
 @app.route("/chatbot", methods=["POST"])
+
 def chatbot():
     global message_history
 
