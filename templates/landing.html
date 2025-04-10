@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cura HealthBot – Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+  background: #fdf8ef;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 🌄 Background image only in header */
+header {
+  padding: 80px 20px 40px;
+  text-align: center;
+  background: url('/static/images/pic1.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* 🌫️ soft dark overlay */
+  backdrop-filter: blur(2px); /* optional mild blur */
+  z-index: 0;
+}
+
+header h1, header p, header .start-btn {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 48px;
+  color: #fff;
+}
+
+header p {
+  font-size: 20px;
+  margin-top: 12px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #f1f1f1;
+}
+
+    .section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section h2 {
+      font-size: 32px;
+      color: #404f32;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .highlight-box {
+      background-color: #e3efe1;
+      border-left: 5px solid #404f32;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 10px;
+    }
+
+    .start-btn {
+      display: inline-block;
+      padding: 16px 32px;
+      font-size: 18px;
+      background-color: #404f32;
+      color: white;
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .start-btn:hover {
+      background-color: #5b6e47;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .btn-primary {
+  display: inline-block;
+  background-color: #404f32;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2f3a27;
+}
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    .fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <h1>Welcome to CURA HealthBot</h1>
+      <p>Aidra, your calm and caring AI assistant, is here to support your well-being with symptom guidance and trusted health insights 💙</p>
+      <div style="margin-top: 30px;">
+        <a href="index.html" class="start-btn">Start Health Chat</a>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>About Cura</h2>
+      <p>
+        Cura HealthBot is designed to make health information more accessible and comforting. It uses artificial intelligence to help you understand what might be going on based on the symptoms you share. Aidra, your chatbot assistant, responds in a warm, friendly tone to help ease your stress and guide your next steps.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>How It Works</h2>
+      <p>
+        When you describe your symptoms, Cura uses a trained machine learning model to analyze the input and predict possible conditions. The model looks for patterns across many known symptom-disease relationships.
+      </p>
+      <div class="highlight-box">
+        ✅ Cura uses <strong>DeepSeek LLM v3</strong> as its AI engine for understanding natural language and responding empathetically.  
+        🧠 A trained ML model handles disease prediction.
+      </div>
+      <p>
+        The goal is to help you feel more informed — not overwhelmed — before reaching out to a doctor.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Data Transparency</h2>
+      <p>
+        Your privacy matters. Cura does not store or collect personal health information. All chats are temporary and anonymous.
+      </p>
+      <p>
+        The system is designed to be supportive, safe, and transparent — offering insights based only on the symptoms you describe.
+      </p>
+
+      <a href="#" class="btn-primary" onclick="fadeToPage('privacy.html')">View Privacy Policy</a>
+
+    </section>
+
+    <section class="section">
+      <h2>Medical Disclaimer</h2>
+      <p>
+        While Cura can help you understand your symptoms and offer general health advice, it is <strong>not a replacement for professional medical care</strong>.
+      </p>
+      <div class="highlight-box">
+        ⚠️ Always consult a licensed medical provider for diagnosis or treatment. Cura is a support tool, not a doctor.
+      </div>
+    </section>
+
+    <div class="center" style="margin-bottom: 60px;">
+      <a href="index.html" class="start-btn">💬 Begin Chat with Aidra</a>
+    </div>
+
+    <footer>
+      &copy; 2025 Cura HealthBot. Powered by DeepSeek v3 | Designed for education & wellness.
+    </footer>
+  </div>
+
+  <!-- 👇 JavaScript for scroll animation -->
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const options = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    function fadeToPage(url) {
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+      window.location.href = url;
+    }, 500); // match fade duration
+  }
+  </script>
+</body>
+</html>
