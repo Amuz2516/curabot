@@ -4,10 +4,10 @@ import joblib
 import requests
 import re
 import pandas as pd
-from flask import Flask, render_template, request, jsonify # ✅ Add this!
+from flask import Flask, render_template, request, jsonify 
 
 app = Flask(__name__)
-CORS(app)  # Allow frontend to call this backend
+CORS(app)  # this allowed frontend to call this backend
 
 # Load trained ML model and symptom labels
 model = joblib.load("disease_prediction_model.pkl")
@@ -52,8 +52,8 @@ def predict_disease(symptoms):
 
 def ask_deepseek_v3(messages):
     headers = {
-        "Authorization": "Bearer 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",  # 🔐 Replace this with your OpenRouter key
-        "HTTP-Referer": "https://curabot-z3qx.onrender.com",  # or your website domain
+        "Authorization": "Bearer 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", 
+        "HTTP-Referer": "http://localhost",  
         "Content-Type": "application/json"
     }
 
@@ -71,22 +71,21 @@ def ask_deepseek_v3(messages):
     except Exception as e:
         print("Error from OpenRouter:", response.json())
         return "⚠️ Sorry, I couldn't generate a response right now."
+    
 # Flask route
 
-# ✅ 1. Landing Page route
 @app.route('/')
 def landing():
     return render_template('landing.html')
 
-# ✅ 2. Chat page route
 @app.route('/index')
 def index():
     return render_template('index.html')
 
-# ✅ 3. Privacy Policy route
 @app.route('/privacy')
 def privacy():
     return render_template('privacy.html')
+
 @app.route("/chatbot", methods=["POST"])
 
 def chatbot():
@@ -98,7 +97,7 @@ def chatbot():
 
     input_type, data = classify_input(user_input)
 
-    # 🧠 If it's symptom input, use ML model
+    # If it's symptom input, use ML model
     if input_type == "symptoms":
         predicted_disease = predict_disease(data)
         response_text = f"🩺 Based on your symptoms, you may be experiencing: {predicted_disease}. Please take care and consult a doctor if symptoms persist 💙"
@@ -109,7 +108,7 @@ def chatbot():
 
         return jsonify({"response": response_text})
 
-    # 🗣️ Else, send to LLM for answer
+    # Else, send to LLM for answer
     else:
         message_history.append({"role": "user", "content": user_input})
         bot_reply = ask_deepseek_v3(message_history)
@@ -117,9 +116,6 @@ def chatbot():
 
         return jsonify({"response": bot_reply})
 
-# ---------------------------
-# Endpoint to Reset Chat
-# ---------------------------
 @app.route("/reset", methods=["POST"])
 def reset_chat():
     global message_history
@@ -131,7 +127,7 @@ def reset_chat():
     ]
     return jsonify({"response": "🔄 Chat has been reset."})
 
-# Run the App
+# to run the app
 if __name__ == '__main__':
     app.run(debug=True)
 
