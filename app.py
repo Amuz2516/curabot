@@ -52,7 +52,7 @@ def predict_disease(symptoms):
 
 def ask_deepseek_v3(messages):
     headers = {
-        "Authorization": "Bearer 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", 
+        "Authorization": "Bearer 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", 
         "HTTP-Referer": "http://localhost",  
         "Content-Type": "application/json"
     }
