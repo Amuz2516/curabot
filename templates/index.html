@@ -1,77 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AIVA Chatbot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/style.css">
-  <script src="/static/script.js"></script>
-</head>
-<body>
-  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIVA Chatbot</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="/static/script.js"></script>
+  </head>
+  <body>
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
-  <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-  </button>
+    <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M4 6h16M4 12h16M4 18h16"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    </button>
 
-  <button id="themeToggle" onclick="toggleTheme()" class="theme-toggle">🌙</button>
+    <button id="themeToggle" onclick="toggleTheme()" class="theme-toggle">
+      🌙
+    </button>
 
-  <div class="sidebar" id="sidebar">
-    <div>
-      <h1>CURA HEALTHBOT</h1>
-      <button onclick="clearChat()">🧹 Clear Chat</button>
-      <div id="sidebarUser"></div>
-    </div>
-    <button class="upgrade">✨ Upgrade to Plus</button>
-  </div>
-
-  <div class="main" id="main">
-
-    <div class="chatbot-title">CURA HEALTHBOT</div>
-
-    <div class="suggestions">
-      <button onclick="sendSuggestion('I’m having a sore throat and mild fever. What could it be?')">
-        Describe symptoms<br><small>e.g., sore throat, headache</small>
-      </button>
-      
-      <button onclick="sendSuggestion('What are the precautions I should take to avoid food poisoning?')">
-        Precautions advice<br><small>e.g., for food poisoning</small>
-      </button>
-      
-      <button onclick="sendSuggestion('Can I take ibuprofen and paracetamol together?')">
-        Medicine question<br><small>e.g., about pain relief</small>
-      </button>
-      
-      <button onclick="sendSuggestion('I feel stressed and anxious. Can you help?')">
-        Mental health support<br><small>e.g., stress or anxiety</small>
-      </button>
-      
-      <button onclick="sendSuggestion('What diet should I follow when I have a cold or flu?')">
-        Diet advice<br><small>e.g., for cold or flu</small>
-      </button>
-      
-      <button onclick="sendSuggestion('How can I protect myself from viral infections?')">
-        How to stay protected<br><small>Viral infections prevention tips</small>
-      </button>
+    <div class="sidebar" id="sidebar">
+      <div>
+        <h1>CURA HEALTHBOT</h1>
+        <button onclick="clearChat()">🧹 Clear Chat</button>
+        <div id="sidebarUser"></div>
+      </div>
+      <button class="upgrade">✨ Upgrade to Plus</button>
     </div>
 
-    <div class="bubble bot">
-      👋 Hi there! I’m <strong>Aidra</strong>, your caring AI healthcare assistant from <strong>Cura HealthBot</strong>.  
-      <br><br>
-      You can tell me your symptoms, ask for advice, or simply get support anytime you need.
-      <br><br>
-      <strong>Please note:</strong> I'm here to provide helpful information and emotional support, but I'm <u>not a substitute for medical advice from a licensed doctor</u>. Always consult a healthcare professional for serious or urgent concerns. 💙
+    <div class="main" id="main">
+      <div class="chatbot-title">CURA HEALTHBOT</div>
+
+      <div class="suggestions">
+        <button
+          onclick="sendSuggestion('I’m having a sore throat and mild fever. What could it be?')"
+        >
+          Describe symptoms<br /><small>e.g., sore throat, headache</small>
+        </button>
+
+        <button
+          onclick="sendSuggestion('What are the precautions I should take to avoid food poisoning?')"
+        >
+          Precautions advice<br /><small>e.g., for food poisoning</small>
+        </button>
+
+        <button
+          onclick="sendSuggestion('Can I take ibuprofen and paracetamol together?')"
+        >
+          Medicine question<br /><small>e.g., about pain relief</small>
+        </button>
+
+        <button
+          onclick="sendSuggestion('I feel stressed and anxious. Can you help?')"
+        >
+          Mental health support<br /><small>e.g., stress or anxiety</small>
+        </button>
+
+        <button
+          onclick="sendSuggestion('What diet should I follow when I have a cold or flu?')"
+        >
+          Diet advice<br /><small>e.g., for cold or flu</small>
+        </button>
+
+        <button
+          onclick="sendSuggestion('How can I protect myself from viral infections?')"
+        >
+          How to stay protected<br /><small
+            >Viral infections prevention tips</small
+          >
+        </button>
+      </div>
+
+      <div class="bubble bot">
+        👋 Hi there! I’m <strong>Aidra</strong>, your caring AI healthcare
+        assistant from <strong>Cura HealthBot</strong>. <br /><br />
+        You can tell me your symptoms, ask for advice, or simply get support
+        anytime you need.
+        <br /><br />
+        <strong>Please note:</strong> I'm here to provide helpful information
+        and emotional support, but I'm
+        <u>not a substitute for medical advice from a licensed doctor</u>.
+        Always consult a healthcare professional for serious or urgent concerns.
+        💙
+      </div>
+
+      <div class="chat-window" id="chatWindow"></div>
     </div>
-    
 
-    <div class="chat-window" id="chatWindow"></div>
-  </div>
-
-  <div class="chat-input">
-    <textarea id="chatInput" placeholder="Describe your symptoms ..." rows="1"></textarea>
-    <button onclick="sendUserMessage()">➤</button>
-    <button onclick="startVoiceInput()" title="Speak symptoms 🎤">🎤</button>
-  </div>
-</body>
+    <div class="chat-input">
+      <textarea
+        id="chatInput"
+        placeholder="Describe your symptoms ..."
+        rows="1"
+      ></textarea>
+      <button onclick="sendUserMessage()">➤</button>
+      <button onclick="startVoiceInput()" title="Speak symptoms 🎤">🎤</button>
+    </div>
+  </body>
 </html>
