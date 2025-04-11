@@ -103,7 +103,8 @@ pip install flask flask-cors joblib scikit-learn pandas requests
 python app.py
 Once running, Flask will output something like:
 
-Running on http://127.0.0.1:5000/ 5. Open the Web Application
+Running on http://127.0.0.1:5000/ 
+5. Open the Web Application
 Open any web browser and navigate to:
 
 http://127.0.0.1:5000/
@@ -123,7 +124,7 @@ Privacy policy (/privacy)
 # Credits
 
 -Built by : Aman Kureshi - L39141861
--ML dataset inspired by open-source Kaggle datasets
+-ML dataset inspired by open-source datasets
 -LLM powered by DeepSeek via OpenRouter API
 -University: University Academy 92 (UA92)
 -Mentor/Tutor: Ngozi Nneke
